@@ -1,0 +1,21 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <script src="https://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            $("#btn1").click(function () {
+                alert("text:"+$("#p1").text());
+            });
+        });
+    </script>
+
+</head>
+<body>
+    <p id="p1">早上好！</p>
+    <button id="btn1" value="友军">点击</button>
+
+</body>
+</html>
