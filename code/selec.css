@@ -1,0 +1,20 @@
+#div1{
+    width: 400px;
+    height: 500px;
+    margin: 0 auto;
+    background-color:lawngreen;
+}
+
+#div1 .active{
+    background-color: gold;
+    color:red;
+    font-size: 14px;
+    margin-top: 10px;
+    border: yellow 2px solid;
+}
+
+#div1 div{
+    width: 400px;
+    position:absolute;
+    display:none;
+}

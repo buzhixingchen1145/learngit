@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <script>
+        window.onload = function(){
+            window.oncontextmenu = function(){
+                return false;//阻止右键菜单
+            }
+            var menu = document.getElementById('div1');
+            document.onmousedown = function(ev){
+                var e = ev || e.window.event;
+                if(e.button == 2){
+                    menu.style.display = 'block';
+                    menu.style.left = e.clientX +'px';
+                    menu.style.top = e.clientY +'px';
+                }else{
+                    menu.style.display = 'none';
+                }
+
+        }
+        }
+    </script>
+    <style>
+        *{margin:0;padding:0;list-style: none}
+        div{width: 100px;height: 200px;display:none;background-color:wheat;position: absolute}
+    </style>
+</head>
+<body>
+    <div id="div1">
+        <ul>
+            <li>查看源码</li>
+            <li>百度</li>
+            <li>谷歌</li>
+        </ul>
+    </div>
+
+</body>
+</html>

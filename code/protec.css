@@ -1,0 +1,39 @@
+#div2{
+    width: 400px;
+    height: 500px;
+    background-color:lightskyblue;
+    margin: 0px auto;
+    border: 2px black solid;
+
+}
+#div1{
+    width: 400px;
+    height: 100px;
+    background-color:lightskyblue;
+    margin: 0px auto;
+    border: 2px black solid;
+}
+
+#div1 button{
+    background-color: beige;
+    color: black;
+    margin-top: 50px;
+    margin-left: 20px;
+    float: left;
+    font-size: 18px;
+    border: black 2px solid;
+
+}
+input{
+    position: absolute;
+    width: 396px;
+    height: 20px;
+}
+#div2 div{
+    border-bottom: yellow 2px dashed;
+    position: relative;
+}
+#div2 div button{
+    position: absolute;
+    right:0;
+}

@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>节点练习</title>
+    <script src="obj1.js"></script>
+    <script>
+        window.onload = function(){
+            var oD1 = $('div1');
+            var oD2 = $('div2');
+            var oB1 = oD1.getElementsByTagName('button');
+            var oInput = $("inp");
+
+            oB1[0].onclick = function () {
+                if(!oInput.value){
+                    alert('请输入内容！')
+                }else{
+                    var newDiv = document.createElement('div');
+                    var oT = document.createTextNode(oInput.value);
+                    newDiv.appendChild(oT);
+                    newDiv.style.backgroundColor = colorRandom();
+                    oD2.appendChild(newDiv);
+                    oInput.value = '';
+                }
+            }
+            oB1[1].onclick = function(){
+                oD2.removeChild(oD2.lastChild);
+            }
+            oB1[2].onclick = function(){
+                var newdiv = oD2.lastChild.cloneNode(true)
+                oD2.appendChild(newdiv);
+            }
+        }
+    </script>
+    <link rel="stylesheet" href="protec.css" type="text/css">
+</head>
+<body>
+        <div id="div1">
+            <input type="text" title="请输入" id="inp">
+            <button>添加</button>
+            <button>删除</button>
+            <button>拷贝</button>
+        </div>
+
+
+</body>
+</html>

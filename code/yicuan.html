@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>一串</title>
+<!--    <link rel="stylesheet" href="练习.css">-->
+<!--    <script src="obj1.js"></script>-->
+    <script>
+        window.onload = function(){
+            var divs = document.getElementsByTagName('div');
+            document.onmousemove = function(ev){
+                var e = ev || e.window.event;
+                for(var i = divs.length-1;i>0;i--){
+                    divs[i].style.left = divs[i-1].offsetLeft + 'px';
+                    divs[i].style.top = divs[i-1].offsetTop + 'px';
+                }
+                divs[0].style.left = e.clientX +'px';
+                divs[0].style.top= e.clientY +'px';
+            }
+        }
+    </script>
+    <style>
+    *{
+        margin:0;
+        padding: 0;
+    }
+
+    div{
+        background-color: gold;
+        border-radius:50%;
+        width: 10px;
+        height: 10px;
+        position:absolute;
+    }
+    </style>
+</head>
+<body>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+
+</body>
+</html>

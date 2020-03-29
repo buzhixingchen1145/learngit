@@ -1,0 +1,24 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <link rel="stylesheet" href="练习.css">
+    <script src="obj1.js"></script>
+    <script>
+        //鼠标跟踪
+        window.onload = function(){
+            var oD1 = $('div1');
+            document.onmousemove = function (ev) {
+                var e = ev || window.event;
+                oD1.style.left = e.clientX - 75 +'px';
+                oD1.style.top = e.clientY - 75 +'px';
+            }
+        }
+    </script>
+
+</head>
+<body>
+        <div id="div1"></div>
+</body>
+</html>

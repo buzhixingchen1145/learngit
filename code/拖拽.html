@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+<!--    <script src="obj1.js"></script>-->
+    <style>
+        *{padding: 0;margin: 0}
+        div{
+            background:red no-repeat;width: 100px;height: 100px;position:absolute;
+        }
+    </style>
+    <script>
+        window.onload = function(){
+            var oD = document.getElementById('div1');
+            oD.onmousedown = function(ev){
+            var e = ev || e.window.event;
+            var offx = e.clientX - oD.offsetLeft;
+            var offy = e.clientY - oD.offsetTop;
+
+            document.onmousemove = function(ev){
+            var e = ev || e.window.event;
+            var l = e.clientX - offx;
+            var t = e.clientY - offy;
+
+            if(l <= 0){
+                            l = 0;
+                        }
+            var windowwidth = document.documentElement.clientWidth || document.body.clientWidth;
+
+            if(l >= windowwidth - oD.offsetWidth){
+                l = windowwidth - oD.offsetWidth;
+            }
+
+            if(t <= 0){
+                t = 0;
+            var windowheight = document.documentElement.clientHeight || document.body.clientHeight;
+
+            }
+            if(t >= windowheight - oD.offsetHeight){
+                t = windowheight - oD.offsetHeight;
+            }
+            oD.style.left = e.clientX - offx + 'px';
+            oD.style.top = e.clientY - offy + 'px';
+        }
+    }
+    oD.onmouseup = function () {
+         document.onmousemove = null;
+    }
+        }
+    </script>
+</head>
+<body>
+        <div id="div1"></div>
+</body>
+</html>

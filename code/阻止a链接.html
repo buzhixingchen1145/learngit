@@ -1,0 +1,25 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+        *{margin: 0;padding:0;text-decoration:none;}
+    </style>
+    <script src="obj1.js"></script>
+    <script>
+        window.onload = function(){
+            var a1 = document.getElementById('aa');
+            a1.onclick = function(ev){
+                // return confirm('你要去？');
+                var e = ev || e.window.event;
+                getDef(e);
+                alert(1)
+            }
+        }
+    </script>
+</head>
+<body>
+<a href="http://www.baidu.com" id="aa">百度</a>
+</body>
+</html>

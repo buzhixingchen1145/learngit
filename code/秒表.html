@@ -1,0 +1,136 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>project</title>
+<!--    <link rel="stylesheet" href="./obj.css" type="text/css">-->
+    <script src="obj1.js"></script>
+    <script>
+        // document.write(time());
+        // var d = new Date();
+        // // var tim = Date.parse(2020-3-28);
+        // alert(d);
+        //  var tim = d.getTime();
+        // alert(tim);
+        // alert(countDate('2020-3-9','2020-3-10'));
+        // var i = 0;//总时间
+        // var timer = null;//计时器返回值
+        // var isRunning = false;
+        // window.onload = function () {
+            //取按钮的值,绑定事件
+    <!--        function start(){-->
+    <!--          timer = setInterval(function () {-->
+    <!--                i++;-->
+    <!--                $('sec').innerHTML = dobTim(i % 60);-->
+    <!--                $('min').innerHTML = dobTim(parseInt((i / 60) % 60));-->
+    <!--                $('hour').innerHTML = dobTim(parseInt(i/3600));-->
+    <!--           },100)-->
+    <!--       }-->
+    <!--            function pause() {-->
+    <!--                clearInterval(timer);-->
+    <!--           }-->
+    <!--           $("start").onclick = function(){-->
+    <!--               if(!isRunning){-->
+    <!--                   $("start").innerHTML = "暂停";-->
+    <!--                   isRunning = true;-->
+    <!--                   start();-->
+    <!--               }else{-->
+    <!--                   $("start").innerHTML = "开始";-->
+    <!--                   isRunning = false;-->
+    <!--                   pause();-->
+    <!--               }-->
+    <!--           }-->
+    <!--           $("reset").onclick = function(){-->
+    <!--               clearInterval(timer);-->
+    <!--               i = 0;-->
+    <!--               isRunning = false;-->
+    <!--               $("start").innerHTML = "开始";-->
+    <!--               $('sec').innerHTML = "00";-->
+    <!--               $('min').innerHTML = "00";-->
+    <!--               $('hour').innerHTML = "00";-->
+    <!--       }-->
+
+    <!--    }-->
+
+
+        //时间实时显示
+    <!--    setInterval(function () {-->
+    <!--            var oo = $("timea").innerHTML = time();-->
+    <!--    },1000)-->
+
+        //改变字体颜色和大小
+        // window.onload = function () {
+        //
+        //     var speed = 5;
+        //     var count = 0;
+        //     setInterval(function () {
+        //         $('e').style.color = colorRandom();
+        //         var iCur = parseInt(getStyle($('e'),'fontSize'));//上次大小
+        //         $('e').style.fontSize = iCur + speed + 'px';
+        //
+        //         count++;
+        //         if(count%6 == 0){
+        //             speed *= -1;
+        //         }
+        //     },1000);
+        // }
+        // window.onload = function () {
+            // alert($('e').getAttribute('class'));
+            // alert($('e').innerHTML );
+            // alert($('e').outerHTML );
+            // alert(odiv.childNodes.length)
+            // alert(odiv.childNodes[0].nodeType);
+            // alert(odiv.childNodes[0].nodeName);
+            // alert(odiv.childNodes[1].nodeName);
+            // alert(odiv.childNodes[2].nodeName);
+            // alert(odiv.childNodes[0].nodeValue);
+            // alert(odiv.attributes.getNamedItem('class').nodeName);
+            // alert(odiv.attributes.getNamedItem('class').nodeType);
+            // alert(odiv.attributes['class'].nodeValue);
+        // }
+        window.onload = function () {
+            var oB = $('btn');
+            var oD = $('damao');
+            oB.onclick = function(){
+                var oP = document.createElement("p");
+                var oT = document.createTextNode('<br/>zheshidad');
+                // oP.appendChild(oT);
+                // document.body.insertBefore(oP,oD);
+                // document.body.replaceChild(oP,oD);
+                // oD.appendChild(oP);
+                document.body.removeChild(oD);
+            }
+        }
+
+    </script>
+
+
+</head>
+
+<body>
+            <div id="damao">
+                <em>em</em>
+                文本
+                <strong>strong</strong>
+            </div>
+            <button id="btn">节点操作</button>
+<!--    <div id="box">-->
+<!--        <span id='hour'>00</span>-->
+<!--        <span>:</span>-->
+<!--        <span id="min">00</span>-->
+<!--        <span>:</span>-->
+<!--        <span id="sec">00</span>-->
+<!--        <br/>-->
+<!--        <button id="start">开始</button>-->
+<!--        <button id="reset">复位</button>-->
+<!--    </div>-->
+<!--        <div id="e" >-->
+<!--                <p title="hulahula" class="d1"  xxx="ddd" id="lll">-->
+<!--                    wenben-->
+<!--                    <span id="dalao">dalao</span>-->
+<!--                    <strong>文本</strong>-->
+<!--                </p>-->
+
+<!--        </div>-->
+</body>
+</html>
