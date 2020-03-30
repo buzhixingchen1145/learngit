@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title> 生成表格</title>
+        <!-- <link src='1.css' type="text/css"> -->
+        <script >
+          window.onload = function(){
+    var r1 = document.getElementById('row');
+    var c1 = document.getElementById('col');
+    var t1 = document.getElementById('t1');
+    var bt1 = document.getElementById('bt1');
+
+    bt1.onclick = function(){
+        if(!r1.value || !c1.value){
+            alert('请输入行列');
+        }else{
+            for(var i = 0;i<r1.value;i++){
+                    var tr1 = document.createElement('tr');
+                    tr1.className = 'box'+ (i%2);
+                    for(var j = 0;j<c1.value;j++){
+                        var td1 = document.createElement('td');
+                        tr1.appendChild(td1);
+                    }
+                    var bt2 = document.createElement('td');
+                    bt2.innerHTML = '<button>删除</button>';
+                    tr1.appendChild(bt2);
+                    t1.appendChild(tr1);
+                 }
+            }
+        }
+        //给删除按钮添加事件委托
+    t1.onclick = function(ev){
+        var e = ev || window.event;
+        var target = e.target || window.srcElement;
+        if(target.nodeName.toLowerCase()=='button'){
+            t1.removeChild(target.parentNode.parentNode);
+        }
+    }
+
+    }
+
+
+
+        </script>
+        <style>
+            #t1 tr td {
+                        width:100px;
+                        height:50px;
+                    }
+            .box1{
+                background-color: red;
+            }
+            .box0{
+                background-color: cornflowerblue;
+            }
+            </style>
+    </head>
+    <body>
+        <div>
+            <input id='row' type="text" placeholder="请输入行">行</input>
+            <input id="col" type="text" placeholder="请列">列</input>
+            <button id="bt1">生成</button>
+            <table id="t1" border="1"></table>
+        </div>
+    </body>
+</html>

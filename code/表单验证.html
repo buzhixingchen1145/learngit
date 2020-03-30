@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport">
+    <title>表单验证</title>
+    <style>
+        #div1{width: 500px;height: 300px;margin:50px auto;background-image: url("11.png");
+        position:relative;background-size:500px 300px;border:2px solid blue; }
+        #div1 input{width: 400px;height: 70px;opacity:0.5;left:50px;top:50px;position:relative;
+        padding: 10px}
+        #div1 span{
+            display: block;width: 500px;position: absolute;top:5px;text-align: center;
+        }
+        #div1 div{
+            width: 100px;height: 25px;background-color: wheat;position: relative;top : 55px;left: 58px;
+            float: left;padding: 12px;border-radius:50%;
+        }
+    </style>
+    <script>
+        window.onload = function () {
+            var inps = document.getElementsByTagName('input');
+            var div1 = document.getElementById('div1');
+            var span1 = document.getElementById('span1');
+            var divs = div1.getElementsByTagName('div');
+
+            inps[0].onblur = function(){
+                if(inps[0].value.length < 6 || inps[0].value.length > 18){
+                    span1.innerHTML = '注意你的长度！';
+                    span1.style.color = 'red';
+                    span1.style.fontSize = '20px';
+                }else if(!/[a-zA-Z]/.test(inps[0][0])){
+                    span1.innerHTML = '首字母英文谢谢！！';
+                }else if(!/\w/.test(inps[0])){
+                    span1.innerHTML = '数字、字母、下划线！';
+                }else{
+                    span1.innerHTML = '注册成功！';
+                    span1.style.color = 'green';
+                }
+            }
+            inps[1].onkeyup = function(){
+                for(var i=0;i < divs.length;i++){
+                    divs[i].style.backgroundColor = 'wheat';
+                }
+                if(this.value.length >= 6){
+                if(/^\d+&/.test(inps[1].value) || /^[a-z]+$/.test(inps[1].value) || /^[A-Z]+$/.test(inps[1].value)){
+                    divs[0].style.backgroundColor = 'orange';
+                }else if(/\d+/.test(inps[1].value) && /[a-z]+/.test(inps[1].value) && /[A-Z]+/.test(inps[1].value)){
+                    divs[2].style.backgroundColor = 'red';
+                }else {
+                    divs[1].style.backgroundColor = 'yellow';
+                }
+                }
+            }
+        }
+    </script>
+</head>
+<body>
+    <div id="div1">
+        <input id='inp1' type="text" placeholder="请输入用户名：">
+        <span id="span1">6~8字符，可使用数字、字母、下划线，字母开头</span>
+        <input id="inp2" type="password" placeholder="请输入密码：">
+        <div >弱</div>
+        <div >中</div>
+        <div >强</div>
+    </div>
+</body>
+</html>

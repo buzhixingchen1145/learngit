@@ -1,3 +1,24 @@
+
+//事件监听器的封装
+function addEvent(node,eventType,funcName) {
+     node.addEventListener ? node.addEventListener(eventType, funcName, false) :
+        node.attachEvent("on" + eventType, funcName)
+    // if(node.addEventListener){
+    //     node.addEventListener(eventType, funcName, false);
+    // }else{
+    //     node.attachEvent("on" + eventType, funcName);
+    // }
+}
+function removeEvent(node,eventType,funcName) {
+     node.removeEventListener ? node.removeEventListener(eventType, funcName, false) :
+        node.detachEvent("on" + eventType, funcName)
+    // if(node.removeEventListener){
+    //     node.removeEventListener(eventType, funcName, false);
+    // }else{
+    //     node.detachEvent("on" + eventType, funcName);
+    // }
+}
+
 //拖拽  限制出界
 function drag(node){
       node.onmousedown = function(ev){

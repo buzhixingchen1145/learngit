@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>第一天</title>
+<!--    <script src="1.js"></script>-->
+    <style>
+        #div1{
+            background-color:red;
+            width:200px;
+            height:200px;
+            position:absolute;
+        }
+        </style>
+    <script>
+        window.onload = function(){
+        var div1 = this.document.getElementById('div1');
+        div1.onmousedown = function(ev){
+        var e = ev ||e.window.event;
+        var offx = e.clientX - div1.offsetLeft;
+        var offy = e.clientY - div1.offsetTop;
+
+        document.onmousemove = function(ev){
+            var e = ev || e.window.event;
+            div1.style.left = e.clientX - offx + 'px';
+            div1.style.top = e.clientY - offy + 'px';
+        }
+    }
+    div1.onmouseup = function(){
+        document.onmousemove = null;
+    }
+}
+    </script>
+</head>
+
+<body>
+    <div id="div1">
+
+    </div>
+</body>
+</html>

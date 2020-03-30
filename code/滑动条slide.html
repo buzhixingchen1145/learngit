@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+        #div1{width: 500px;height:30px;margin: 50px auto;position: relative;border: red solid 2px;}
+        #div1 #block{width: 30px;height: 30px;position:absolute;background-color: aqua;border-radius: 50%;left: 100px}
+        #div1 #fill{width: 100px; height: 30px;background-color: cornflowerblue;position:absolute;left: 0;}
+    </style>
+    <script>
+        window.onload = function () {
+            var block = document.getElementById('block');
+            var fill = document.getElementById('fill');
+            var div1 = document.getElementById('div1');
+
+             if(!localStorage){
+                        alert('不支持localstorage');
+                    }{
+                       var l = localStorage.slide?localStorage.slide:0;
+                       block.style.left = l + 'px';
+                       fill.style.width = l + 'px';
+                    }
+            block.onmousedown =function (ev) {
+                var e = ev ||window.event;
+                var offx = e.clientX - block.offsetLeft;
+
+                document.onmousemove = function (ev) {
+                    var e = ev ||window.event;
+                    var l = e.clientX - offx;
+                     if(l <= 0){
+                        l = 0;
+                    }
+                    if(l > 470){
+                        l = 470;
+                    }
+                    block.style.left = l + 'px';
+                    fill.style.width = l + 'px';
+                    if(!localStorage){
+                        alert('不支持localstorage');
+                    }{
+                        localStorage.setItem('slide',l);
+                    }
+
+                }
+            }
+            block.onmouseup = function () {
+                document.onmousemove = null;
+            }
+        }
+    </script>
+</head>
+<body>
+    <div id="div1">
+        <div id="fill"></div>
+        <div id="block"></div>
+    </div>
+</body>
+</html>

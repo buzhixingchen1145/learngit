@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+
+    <title>Document</title>
+    <script src="obj1.js"></script>
+    <script>
+
+        //事件冒泡与事件捕获
+        window.onload = function(){
+            var divs = document.getElementsByTagName('div');
+            for(var i = 0;i<divs.length;i++){
+                addEvent(divs[i],'click',show);
+            }
+
+        }
+        //事件监听
+        //     var bts = document.getElementsByTagName('button');
+        //
+        //     bts[1].addEventListener('click',function(){
+        //         alert('hello');
+        //     },false)
+        //
+        //     bts[2].onclick = function(){
+        //             bts[1].removeEventListener('click',show);
+        //     }
+        //
+        //
+        //     bts[0].onclick = function() {
+        //         bts[1].addEventListener('click',show,false);
+        //     }
+            function show() {
+                alert(this.id);
+            }
+        // }
+
+    </script>
+    <style>
+        div{
+            padding:50px;
+        }
+        #d1{
+            background-color: red;
+
+        } #d2{
+            background-color: yellow;
+        } #d3{
+            background-color: blue;
+        }
+    </style>
+</head>
+<body>
+        <div id="d1">
+            <div id="d2">
+                <div id="d3"></div>
+            </div>
+        </div>
+</body>
+</html>
